@@ -1,3 +1,5 @@
 *.iml
 .idea
 front/node_modules
+front/dist
+server/node_modules
