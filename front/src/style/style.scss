@@ -1,0 +1,38 @@
+input[type='radio'] {
+  display: none;
+}
+
+button {
+  outline: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.btn-custom {
+  border: 1px solid #02a53d;
+  color: #02a53d;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-left: 10px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.fz-small {
+  font-size: 13px;
+}
+
+.window-scroll {
+  overflow-y: auto;
+}
+
+#typing {
+  position: absolute;
+  bottom: 6px;
+  left: 20px;
+  font-size: 14px;
+}

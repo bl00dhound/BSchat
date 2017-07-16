@@ -6,40 +6,54 @@ html
         link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous")
 
         script(src="https://use.fontawesome.com/c5a64877d0.js")
-        script(src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous")
+        script(src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous")
         script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous")
         script(src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.24.1/ramda.min.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js")
+
     body
         #modal.modal.fade(tabindex="-1"
         role="dialog"
-        aria-labelledby="userModal"
-        aria-hidden="true")
+        aria-labelledby="modal"
+        aria-hidden="true"
+        data-backdrop="static"
+        data-keyboard="false")
             .modal-dialog(role="document")
                 .modal-content
                     .modal-header
-                        h5.modal-title Title
-                        button#userModal.close(type="button"
-                        data-dismiss="modal"
-                        aria-label="Close")
-                            span(aria-hidden="true") &times;
+                        h5.modal-title Enter to the chat
                     .modal-body
                         .container
                             .row
+                                .col-sm-12.mb-2
+                                    span Sign in:
                                 .col-sm-12
-                                    label(for="username") Your Name
-                                    .input-group
-                                        input#username.form-control(type="text" placeholder="username..." aria-describedby="username")
-                                .col-sm-12.mt-3
-                                    .input-group
-                                        span.input-group-addon#login @
-                                        input.form-control(type="text" placeholder="login..." aria-describedby="login")
+                                    #fg-signin.form-group
+                                        .input-group.mb-2
+                                            span.input-group-addon @
+                                            input#login.form-control.mr-2(type="text" placeholder="nickname" aria-describedby="nickname")
+                                            span.input-group-button
+                                            button#go_btn.btn.btn-primary Go!
+                                .col-sm-12
                     .modal-footer
-                        button.btn.btn-secondary(type="button"
-                        data-dismiss="modal") Close
-                        button.btn.btn-primary(type="button") Save changes
-
+                        .container
+                            .row
+                                .col-sm-12.mb-2
+                                    span Registration:
+                                .col-sm-12
+                                    #fg-new.form-group
+                                        .row
+                                            .col-sm-6
+                                                .input-group.mt-2
+                                                    input#username.form-control(type="text" placeholder="user name" aria-describedby="username")
+                                            .col-sm-6
+                                                .input-group.mt-2
+                                                    span.input-group-addon @
+                                                    input#newLogin.form-control(type="text" placeholder="nickname" aria-describedby="newLogin")
+                                            .col-sm-4.mt-2
+                                                .btn.btn-primary#reg_btn Register
 
 
         nav.navbar.navbar-inverse.bg-primary.mb-4
@@ -48,36 +62,28 @@ html
                     .col-sm-6
                         .fa.fa-grav.fa-2x.text-white
                         h2.ml-2.d-inline-block.text-white.hidden-xs-down Chat
-                    .col-sm-6
-                        #greetings.pull-right.text-white Hello, user
-
-
-        button.btn.btn-primary(type="button"
-        data-toggle="modal"
-        data-target="#modal") Launch demo modal
-
+                    .col-sm-4
+                        #greetings.text-white
+                    .col-sm-2
+                        #exit_btn.btn.btn-success.pull-right Exit
+        .alert.alert-warning#gone
 
         .container-fluid
             .row
                 .col-sm-4
                     .card
                         #active_users.card-block
-                            | some text in right panel
+
                 .col-sm-8
-                    .card
-                        #chat_window.card-block
-                            | some text in chat-window
+                    .card(style='position: relative')
+                        #chat_window.card-block.window-scroll(style='height:60vh')
+                        #typing
                     .row
                         .col-sm-12
-                            textarea#message.form-contol.mt-2.w-100(rows='4', name='message')
-                        .col-sm-3
+                            textarea#message.form-contol.mt-2.w-100(rows='4')
+                        .col-sm-6
                             button#send_btn.btn.btn-primary.mt-2(type='button') Send message!
-                        .col-sm-9
 
-
-
-
-
-
-
-        script(src='js/index.js')
+        //script(src='js/httpService.js')
+        //script(src='js/chatHTTP.js')
+        script(src='js/chatSocket.js')

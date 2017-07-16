@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,7 +16,8 @@
     "mongodb": "^2.2.30",
     "mongoose": "^4.11.3",
     "morgan": "^1.8.2",
-    "ramda": "^0.24.1"
+    "ramda": "^0.24.1",
+    "socket.io": "^2.0.3"
   },
   "devDependencies": {
     "locus": "^2.0.1",
