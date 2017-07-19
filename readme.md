@@ -7,9 +7,6 @@
  * ```cd ../server```
  * ```npm install```
  
- #### Import database (_in project folder_):
- * ```mongorestore -d chat ./DBdump/chat```
-
  #### Run:
  * in server folder: ```npm start```
  * in front folder: ```npm start``` or ```gulp```
