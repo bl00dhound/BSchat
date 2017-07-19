@@ -8,7 +8,7 @@
  * ```npm install```
  
  #### Import database (_in project folder_):
- * ```mongorestore -d api ./DBdump/chat```
+ * ```mongorestore -d chat ./DBdump/chat```
 
  #### Run:
  * in server folder: ```npm start```
