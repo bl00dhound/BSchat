@@ -2,7 +2,7 @@
 
  #### Install project:
  * ```git clone https://github.com/bl00dhound/BSchat```
- * ```cd nodeAPI/front```
+ * ```cd BSchat/front```
  * ```npm install```
  * ```cd ../server```
  * ```npm install```
