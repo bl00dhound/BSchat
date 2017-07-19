@@ -16,6 +16,6 @@
  * in front folder: ```npm start``` or ```gulp```
  
  > _IMPORTANT!:_
- > If need open second window for testing chat - run ```npm start``` or ```gulp``` in separate terminal!
+ > If you need to open second window for testing chat - run ```npm start``` or ```gulp``` in separate terminal!
  
  
