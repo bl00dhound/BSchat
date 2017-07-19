@@ -7,8 +7,7 @@
  * ```cd ../server```
  * ```npm install```
  
- #### Import database
- __in project folder:__
+ #### Import database (_in project folder_):
  * ```mongorestore -d api ./DBdump/chat```
 
  #### Run:
